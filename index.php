@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/Models/movie.php";
-require_once __DIR__ . "/Models/genres.php";
+/* require_once __DIR__ . "/Models/genres.php"; */
 require_once __DIR__ . "/Models/cast.php";
 
 
@@ -10,13 +10,13 @@ $cast_film = [
     new Cast("Laurence", "Fishburne", 61)
 ];
 
-$genres_film = [
+/* $genres_film = [
     new Genre("Science Fiction"),
     new Genre("Thriller"),
     new Genre("Fantasy")
 ];
-
-$movie = new Movie("The Matrix", $cast_film, $genres_film);
+*/
+$movie = new Movie("The Matrix", $cast_film);
 
 ?>
 
@@ -33,6 +33,15 @@ $movie = new Movie("The Matrix", $cast_film, $genres_film);
 <body>
     <section>
         <h2>Dati Film</h2>
+        <h4>Nome Film: <?php echo $movie->name ?></h4>
+
+        <h2>Cast Film:</h2>
+        <ul>
+            <?php foreach ($movie->cast as $cast) { ?>
+                <li> <?php echo $cast->printCastInfo(); ?> </li>
+            <?php } ?>
+        </ul>
+
     </section>
 </body>
 

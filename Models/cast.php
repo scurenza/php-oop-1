@@ -15,6 +15,6 @@ class Cast
 
     public function printCastInfo()
     {
-        return "Nome: $this->name; Cognome: $this->surname; Età: $this->age;";
+        return "$this->name $this->surname, Età: $this->age anni";
     }
 }
